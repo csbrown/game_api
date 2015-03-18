@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Tic tac toe</title>
+        <title>Tic Tac Toe</title>
+        {% load games_extras %}
+        {% load static %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="{% static 'games/tictactoe.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'games/tictactoe.css' %}">
     </head>
     <body>
-	<div class="row">
-	    <img class="field" id="f11"/>
-	    <img class="field" id="f12"/>
-	    <img class="field" id="f13"/>
-	</div>
-	<div class="row">
-	    <img class="field" id="f21"/>
-	    <img class="field" id="f22"/>
-	    <img class="field" id="f23"/>
-	</div>
-	<div class="row">
-	    <img class="field" id="f31"/>
-	    <img class="field" id="f32"/>
-	    <img class="field" id="f33"/>
-	</div>
-	<a href="{% url 'tictactoe' %}">New Game</a>
+        <div>
+            <table class="ttt_board">
+                <tr class="ttt_row">
+                    <td class="ttt_cell" id="ttt_cell_0"/>
+                    <td class="ttt_cell" id="ttt_cell_1"/>
+                    <td class="ttt_cell" id="ttt_cell_2"/>
+                </tr>
+                <tr class="ttt_row">
+                    <td class="ttt_cell" id="ttt_cell_3"/>
+                    <td class="ttt_cell" id="ttt_cell_4"/>
+                    <td class="ttt_cell" id="ttt_cell_5"/>
+                </tr>
+                <tr class="ttt_row">
+                    <td class="ttt_cell" id="ttt_cell_6"/>
+                    <td class="ttt_cell" id="ttt_cell_7"/>
+                    <td class="ttt_cell" id="ttt_cell_8"/>
+                </tr>
+            </table>
+        </div>
+        <div id="select_container"/>
+        <div>
+	        <button id="new_game" onclick="newGame();">New Game</button>
+        </div>
     </body>
 </html>
